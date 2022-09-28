@@ -1,0 +1,77 @@
+<!-- !DOCTYPE html 告訴瀏覽器這是html5的文件 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta紀錄文件本身的資訊 -->
+    <!-- UTF-8字元編碼，確保瀏覽該網頁時正常 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- RWD必須設定此行，別改裡面的值
+        width=device-width 自動符合不同裝置預設的最佳解析度
+        initial-scale=1.0 設定裝置畫面初始縮放比例為100%
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="這是我的第一個網頁">
+    <title>這是我的第一個網頁</title>
+    <!-- 連結外部CSS檔案 -->
+    <link rel="stylesheet" href="./css/example/css">
+    <style>
+        /* 本頁面使用的CSS樣式 */
+        body {
+            background: #aec4ae
+        }
+
+        /* 文字顏色變成藍色 */
+        h1 {
+            color: #B64533;
+        }
+
+        /* 段落文字變成24px大小 */
+        p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML</h1>
+    <p>標籤標記內容，產生語意及結構</p>
+
+    <hr>
+
+    <h1>CSS</h1>
+    <p>網頁化妝師，布局，空間，顏色，文字等等調整</p>
+
+    <hr>
+
+    <h1>JavaScript</h1>
+    <p>互動設計、操作網頁元素、串接API等等</p>
+
+    <button id="btn">顯示現在時間</button>
+    <div id="showTime">能量80%</div>
+
+    <!-- 連結外部js檔案 -->
+    <script src=".js/example.js"></script>
+
+    <!-- script 標籤DOM元素是演員的劇本 
+        剛學習時請照在/body前面，確保DOM元素標籤都登場 
+    -->
+    <script>
+        // 單行註解
+        /*多行註解*/
+
+        // 抓到id為btn這個演員
+        const btn = document.getElementById('btn')
+        // 抓到id為showTime這個演員
+        const showTime = document.getElementById('showTime')
+        // 當btn演員被點擊時，要做的事情...
+        btn.onclick = function () {
+            setInterval(() => {
+                showTime.innerText = new Date().toLocaleString()
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
